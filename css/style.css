@@ -1,0 +1,410 @@
+/*
+
+  "Perhaps seeing things from a new perspective has reminded 
+  me of life's beauty.
+
+  Or perhaps my new posture is causing blood to 
+  pool in the back of my brain, resulting in a slight delirium."
+
+      - Prof. Farnsworth, Futurama
+
+*/
+
+html,body{
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+a{
+  text-decoration: none;
+  color: #bada55;
+  outline: none;
+}
+
+a:hover{
+  color: #ffffff;
+}
+
+#bg{
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#player {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+#playlist {
+  width: 100%;
+  height: 80px;
+  background: #b3b3b3;
+  overflow: auto;
+}
+
+#playlist ul{
+  margin: 0;
+  padding: 0;
+}
+
+#playlist ul li{
+  list-style: none;
+  padding: 0;
+}
+#playlist ul li.playing{
+  background: #d3d3d3;
+  font-weight: 700;
+}
+#playlist ul li a{
+  padding: 3px;
+  display: block;
+  color: #333333;
+  border-top: 1px #ffffff solid;
+  border-bottom: 1px #333333 solid;
+}
+#playlist ul li.playing a{
+  color:#78ab18;
+}
+#playlist ul li:hover{
+  background: #bada55;
+}
+
+.audiojs .scrubber{
+  width: 132px;
+}
+
+.audiojs{
+  width: 300px;
+}
+
+#links{
+  position: absolute;
+  top: 20px;
+  left: 320px;
+  right: 510px;
+  height: 116px;
+  background: url('../img/content_bg.png') top left repeat;
+}
+
+#links #spectrum{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#links #spectrum .bar{
+  width: 0.58%;
+  min-height: 3px;
+  background: #333333;
+  display: inline-block;
+  margin-bottom: -102px;
+  margin-left: 0.29%;
+  margin-right: 0.29%;
+}
+
+#links .col{
+  position: relative;
+  display: inline-block;
+  border-right: 1px #888888 solid;
+  margin-top: 6px;
+}
+
+#links .col.no-line{
+  border:none;
+}
+
+#links .col ul{
+  margin: 0;
+  padding: 0;
+}
+
+#links .col h2{
+  font-size: 14px;
+  font-weight: 700;
+  color: #cccccc;
+  margin: 0;
+  padding: 0 10px 4px 10px;
+  text-decoration: underline;
+}
+
+#links .col h2.no-underline{
+  text-decoration: none;
+}
+
+#links .col ul li{
+  padding: 3px 20px;
+  list-style: none;
+}
+
+#links .col ul li a{
+  color: #bada55;
+}
+
+#links .col ul li a:hover{
+  color: #ffffff;
+}
+
+#contentHolder{
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  right: 20px;
+  width: 470px;
+  background: url('../img/contentHolder_bg.png') top left repeat;
+}
+
+#content{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: 200px;
+  left: 10px;
+  background: url('../img/content_bg.png') top left repeat;
+}
+
+#quickLinks{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50px;
+  left: 0;
+  background: #555555;
+}
+
+#quickLinks ul{
+  margin: 0;
+  padding: 0;
+}
+
+#quickLinks ul li{
+  display: block;
+  float: left;
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 223px;
+  height: 48px;
+  border-top: 1px #cccccc solid;
+  border-right: 1px #888888 solid;
+  border-bottom: 1px #000000 solid;
+  border-left: 1px #000000 solid;
+}
+#quickLinks ul li:hover{
+  background: #888888;
+}
+#quickLinks ul li a{
+  color: #cccccc;
+  display: block;
+  position: absolute;
+  width: 221px;
+  height: 28px;
+  padding: 10px 0;
+  left: 50%;
+  margin-left: -111px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+}
+#quickLinks ul li a span{
+  display: block;
+  line-height: 26px;
+}
+#quickLinks ul li a:hover{
+  color: #ffffff;
+  text-shadow: 1px 0 0 #555, 0 2px 0  #000, 1px 4px 6px #555;
+}
+
+#contentContact{
+  position: absolute;
+  top: 50px;
+  right: 0;
+  left: 0;
+  height: 0;
+  overflow: hidden;
+  background: #555555;
+  color: #ffffff;
+}
+
+#contentContact ul{
+  list-style: none;
+  padding: 0 0 0 50px;
+  margin: 0;
+}
+
+#contentContact ul li{
+  padding: 0;
+  margin: 0;
+  font-size: 28px;
+  padding: 10px 10px 0 38px;
+}
+
+#contentContact ul li.contact-email{
+  background: url('../img/mailru.png') 0 15px no-repeat;
+}
+#contentContact ul li.contact-skype{
+  background: url('../img/skype.png') 0 15px no-repeat;
+}
+
+#contactClose{
+  text-align: center;
+  padding: 5px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000000;
+  color: #ffffff;
+}
+
+#contentText{
+  position: absolute;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  color:#e5e5e5;
+  font-size: 16px;
+}
+
+#contentText h1, #contentText p, #contentText h3{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#contentText h1{
+  font-size: 22px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+#contentText h1 .badass, .badass{
+  color: #bada55;
+}
+
+#contentText h1 .smurf{
+  color: #0086cf;
+}
+
+#contentText h1 .banana{
+  color: #ffcb00;
+}
+
+#contentText p{
+  margin: 16px 0;
+}
+
+#contentText ul{
+  list-style-type: disc;
+  padding-left: 40px;
+  margin: 16px 0;
+}
+
+#contentText h3{
+  font-size: 18px;
+  text-decoration: underline;
+  margin: 24px 0 0 0;
+}
+
+#icons{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 68px;
+}
+
+.icon{
+  display: block;
+  overflow: hidden;
+  width: 68px;
+  height: 68px;
+  margin-bottom: 14px;
+  background: url('../img/icons_sprite.png') top left no-repeat;
+}
+
+.icon:hover{
+  background-position: 0 -68px;
+}
+
+.icon.wp{
+  background-position: -68px 0;
+}
+
+.icon.wp:hover{
+  background-position: -68px -68px;
+}
+
+.icon span{
+  display: block;
+  margin-left: -1000px;
+}
+
+#linkedIn{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+#loading{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -30px;
+  margin-left: -150px;
+  width: 150px;
+  text-align: center;
+  font-size: 26px;
+  line-height: 26px;
+  padding: 17px;
+  font-weight: 700;
+  color: #cccccc;
+  background: #333333;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;;
+}
+
+@media screen and (max-width: 1245px) {
+  #playlist {
+    height: 54px;
+  }
+
+  .audiojs .scrubber{
+    width: 242px;
+  }
+
+  .audiojs{
+    width: 410px;
+  }
+
+  #links{
+    position: absolute;
+    top: 110px;
+    left: 20px;
+    right: auto;
+    width: 410px;
+    height: 116px;
+    background: url('../img/content_bg.png') top left repeat;
+    border-top: 1px #ffffff solid;
+  }
+  
+  #links .col.sm-no-line{
+    border: none;
+  }
+}

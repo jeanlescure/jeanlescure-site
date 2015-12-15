@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/jeanlescure
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://jeanlescure.io
+  * I am jeanlescure (https://keybase.io/jeanlescure) on keybase.
+  * I have a public key with fingerprint BC21 9616 1C5C 5DAC B218  B981 BFC1 8C3E CC17 0458
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "bc2196161c5c5dacb218b981bfc18c3ecc170458",
+            "host": "keybase.io",
+            "key_id": "bfc18c3ecc170458",
+            "kid": "0101b1165b629d056c0827606bffa9feb2ce87342de820d3fd7719e735d131f5c3030a",
+            "uid": "fb4e30f9d8c4242ba2e61b7c0a348500",
+            "username": "jeanlescure"
+        },
+        "revoke": {
+            "sig_ids": [
+                "19a5428bd6b7a84c9e78805b35cdfe7ee557577d2ad3ae4d3324b9517d9f7cbc0f"
+            ]
+        },
+        "service": {
+            "hostname": "jeanlescure.io",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1433336997,
+    "expire_in": 157680000,
+    "prev": "491bb7db1aa024060d1e7635b540bf624d6f14eafbf7e62db4722dcb48b8e0f6",
+    "seqno": 15,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.8
+Comment: https://keybase.io/crypto
+
+yMJeAnicZZJriFVVFMfv6EyXblnm9KEBG+hMH6Juufc++3WuGlboYGYk9IAyhr32
+Y+Y04zl37r0zzSOZAkFIakziRjJmiDldwXDsQWAvB50yMaj8JkRBTwsLsSkysX1u
+9cn1ZbP3+q/fWvu/99FFC3OFlmVrXvr2moPqnZYTR/YM5R5K/n5tPIDUjAal8aDf
+NhcXJ722Uq7ESS0oBaAJjjjmWDPNjNJAsIRIYnAaSx1arbFAlMmgGPSl1azCY0BV
+7R1x6s/8pic2GedyfX8zgTDCgDFnwElkEOMaSSI44uCcipwFoq0UISXGSoJM6IwQ
+OLIiZAaH2DEdohApjxtq4hxQGyIXGakpoQQUsRyD0EiFVDKEMmHVVhK1yXr1E1Yl
+A7aqhyo22FwMKnY47beZCdW4189dDUqPBThSjBIJhoNQkmrfW0rEIGTaOCusZUww
+IQxRJlSWmjAkFCKGhYmc0KCRCx73bN90ONZNeGbU5QP8a1i5ktZSnQ74XF+tVi5l
+Y9VGy5n2SQs9/1F6IE6MfydfMGwr1ThNghL2Sl2LMyymoQ8eRaIY2JFyXLE9caZg
+gkvkI2tjhz2SRhhAGMBKIUIRRwZbwUMGjCJwnFDDHaZWOXDCcmKACkKMBipBWuR4
+kN1rMEkztp9T9Xqmty5Rtaajsx9tbM21FHJXtC3IvlqucOXi/z/guUv5S/ceHXtm
+92jb2PP5B/ev+Hr1D++VZpaMfHB6+f596//ofmHy7m0rd1+LlyzYcfjHG3e99VU+
+um/ju3B7l02vv+65W6aOf9l+Rq0e7Grt3NWxr943+fPgZweP7x0bLM6nF76YOtFg
+reGi7+r59S9WX+lEWx/Y8PojK27a/vBd73d30W+eboP2te3Tf76859D49G3dW6Fg
+DnVemFVThcPHzvxSX7jz3MiWpctbfz1/evLRkwfu3/T7toGLVx/5rW3mqVPz96z6
+fubWT8RVjb31OguSN++ca8z+ZLaf/evYG29/uqHeUXxVN7ZMlObg4tIbdnbM7WhM
+bJYnn51e9+HZdRPLTq2dX9N1Pvp8atXK/Mc3/wPBI0ZK
+=JOCG
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jeanlescure
+
+==================================================================
+
