@@ -16,7 +16,10 @@ var frequencyData;
 var CLIENT_ID = '9a3c591c694115f82409fbc9cb68ef04';
 
 function create_sc_audio(){
-  if (!bowser.firefox){
+  // Temporarily disabling Soundcloud API until they get their shit together
+  // about CORS settings on their servers.
+  // if (!bowser.firefox){
+  if (false){
     // initialize client with app credentials
     SC.initialize({
       client_id: CLIENT_ID,
