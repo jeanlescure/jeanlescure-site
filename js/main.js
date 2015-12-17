@@ -26,10 +26,17 @@ function initDesktop(){
 
   var hash = location.hash;
 
-  if (hash.length > 2) $('#player').fadeOut();
+  if (hash.length > 2){
+    $('#player').fadeOut();
+    $('a[href="'+hash+'"]').parent().addClass('selected');
+  }else{
+    $('a[href="#"]').parent().addClass('selected');
+  }
 
   $('#menu a').click(function(ev){
-    console.log($(ev.target).attr('href'));
+    $('#menu li').removeClass('selected')
+    $(ev.target).parent().addClass('selected');
+
     if ($(ev.target).attr('href') === '#') {
       $('#player').fadeIn();
     }else{

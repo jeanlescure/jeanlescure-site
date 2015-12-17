@@ -65,8 +65,8 @@ function geoCage(size, complexity, material){
 }
 
 function create_geoCage(){
-  var wireframeMaterial = new THREE.MeshBasicMaterial( { color: 0x000000, wireframe: true, opacity: 0.1, transparent: true } ); 
-  var wireframeMaterial_b = new THREE.MeshBasicMaterial( { color: 0xbada55, wireframe: true, opacity: 0.1, transparent: true } ); 
+  var wireframeMaterial = new THREE.MeshBasicMaterial( { color: 0x000000, wireframe: true, opacity: 0.2, transparent: true } ); 
+  var wireframeMaterial_b = new THREE.MeshBasicMaterial( { color: 0xbada55, wireframe: true, opacity: 0.8, transparent: true } ); 
   
   geoCages = [];
   geoCages.push(new geoCage( 2000, 1, wireframeMaterial ));
