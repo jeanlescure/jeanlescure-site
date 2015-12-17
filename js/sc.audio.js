@@ -16,7 +16,7 @@ var frequencyData;
 var CLIENT_ID = '9a3c591c694115f82409fbc9cb68ef04';
 
 function create_sc_audio(){
-  if (!bowser.firefox){
+  if (bowser.firefox){
     // initialize client with app credentials
     SC.initialize({
       client_id: CLIENT_ID,

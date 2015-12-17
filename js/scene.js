@@ -13,6 +13,7 @@ var scene;
 var camera;
 var renderer;
 var animation_callback;
+var pointLight;
 
 function create_scene($container,width,height){
   // set the scene size
@@ -48,13 +49,13 @@ function create_scene($container,width,height){
   renderer.setSize(WIDTH, HEIGHT);
   
   // create a point light
-  var pointLight =
-    new THREE.PointLight(0xFFFFFF);
+  pointLight =
+    new THREE.SpotLight(0xFFFFFF);
 
   // set its position
-  pointLight.position.x = 10;
-  pointLight.position.y = 50;
-  pointLight.position.z = 130;
+  pointLight.position.x = 0;
+  pointLight.position.y = 0;
+  pointLight.position.z = 530;
 
   // add to the scene
   scene.add(pointLight);

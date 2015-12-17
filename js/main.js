@@ -15,12 +15,14 @@ var logo;
 var logo_rotating = false;
 var graffiti;
 
-var loadables_total = 4;
+var loadables_total = 3;
 var loadables_loaded = 0;
 
-var contact_open = false;
-
-$(function(){
+function initDesktop(){
+  $('.stackable').not(':target,#home').css('opacity', 0);
+  setTimeout(function(){
+    $('.stackable').not(':target,#home').css('opacity', 1);
+  }, 1000);
   if (bowser.firefox){ 
     $('.sc-link').attr('href','http://www.createjs.com/#!/TweenJS');
     $('.sc-link').html('TweenJS');
@@ -32,12 +34,13 @@ $(function(){
     if (loadables_loaded==loadables_total){
       $('#loading').remove();
       animate();
+      position_logo();
     }
   });
   
   var $container = $("#bg");
   create_scene($container,$container.width()-3,$container.height()-3);
-  renderer.setClearColor(0x333333, 1);
+  renderer.setClearColor(0xffffff, 1);
   
   controls = new THREE.OrbitControls(camera,renderer.domElement);
   controls.maxDistance = 1000;
@@ -45,7 +48,6 @@ $(function(){
   if (bowser.msie) loadables_total = 3;
   
   create_logo();
-  create_graffiti();
   create_skydome();
   create_geoCage();
   
@@ -54,13 +56,12 @@ $(function(){
   function onWindowResize() {
     windowAspect = window.innerWidth / window.innerHeight;
 
-    position_logo();
-    position_graffiti();
-
     camera.aspect = ($container.width()-3) / ($container.height()-3);
     camera.updateProjectionMatrix();
 
     renderer.setSize($container.width()-3, $container.height()-3);
+
+    position_logo();
   }
   
   window.addEventListener( 'resize', onWindowResize, false );
@@ -69,8 +70,7 @@ $(function(){
     mouseX = event.clientX / window.innerWidth;
     mouseY = event.clientY / window.innerHeight;
     try{
-      if(!logo_rotating) logo.rotation.set(0.10+(-(mouseY/20)),0.80+(mouseX/10),0.10+(-(mouseY/20)));
-      graffiti.rotation.set(0,0.80+(mouseX/10),0);
+      if(!logo_rotating) logo.rotation.set(-(0.30+(mouseY/20)),-(0.90-(mouseX/10)),-(0.20+(-(mouseY/20))));
     }catch(e){
       // do nothing
     }
@@ -94,40 +94,18 @@ $(function(){
   }
   
   rotate_logo();
-  
+
   // generate contact info to avoid spam bots
-  $('#contentContact').prepend('<ul>');
-  $('#contentContact ul').append('<li class="contact-email">');
-  $('#contentContact ul').append('<li class="contact-skype">');
-  $('#contentContact ul li.contact-email').html('jean'+'@'+'ticowebmedia.com');
-  $('#contentContact ul li.contact-skype').html('jean'+'.'+'ticowebmedia');
-  
-  // animate contact 
-  $('.contact-link').click(function(e){
-    e.preventDefault();
-    if (contact_open){
-      $('#contentText').animate({top: 50},500);
-      $('#contentContact').animate({height: 0},500);
-      contact_open = false;
-    }else{
-      $('#contentText').animate({top: 200},500);
-      $('#contentContact').animate({height: 150},500);
-      contact_open = true;
-    }
-  });
-  
-  $('#contactClose').click(function(e){
-    e.preventDefault();
-    $('#contentText').animate({top: 50},500);
-    $('#contentContact').animate({height: 0},500);
-    contact_open = false;
-  });
-});
+  $('#contact .content ul').append('<li id="contact-email">');
+  $('#contact .content ul').append('<li id="contact-skype">');
+  $('#contact .content ul #contact-email').html('jean'+'@'+'ticowebmedia.com');
+  $('#contact .content ul #contact-skype').html('jean'+'.'+'ticowebmedia');
+};
 
 function rotate_logo(){
   setTimeout(function(){
     logo_rotating = true;
-    createjs.Tween.get(logo.rotation).to({y: 7.08}, 2000, createjs.Ease.backInOut).call(function(){logo_rotating = false; });
+    createjs.Tween.get(logo.rotation).to({y: -7.08}, 2000, createjs.Ease.backInOut).call(function(){logo_rotating = false; });
     rotate_logo();
   }, randomInt(10000,15000));
 }

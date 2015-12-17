@@ -19,7 +19,7 @@ function create_graffiti(){
     graffiti.scale.set(100,100,100);
     windowAspect = window.innerWidth / window.innerHeight;
     position_graffiti();
-    graffiti.rotation.set(0,0.80,0);
+    graffiti.rotation.set(0,-1.1,0);
     
     scene.add( object );
     
@@ -28,5 +28,5 @@ function create_graffiti(){
 }
 
 function position_graffiti(){
-  graffiti.position.set(-(180 * windowAspect),-300,-(1500 / windowAspect));
+  graffiti.position.set((320 * windowAspect),-325,-(1500 / windowAspect));
 }

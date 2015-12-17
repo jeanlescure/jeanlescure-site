@@ -10,44 +10,92 @@
 
 */
 
-html,body{
+@font-face {
+    font-family: 'ankeregular';
+    src: url('fonts/anke-bold-webfont.eot');
+    src: url('fonts/anke-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/anke-bold-webfont.woff2') format('woff2'),
+         url('fonts/anke-bold-webfont.woff') format('woff'),
+         url('fonts/anke-bold-webfont.ttf') format('truetype'),
+         url('fonts/anke-bold-webfont.svg#ankebold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ankeregular';
+    src: url('fonts/anke-regular-webfont.eot');
+    src: url('fonts/anke-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/anke-regular-webfont.woff2') format('woff2'),
+         url('fonts/anke-regular-webfont.woff') format('woff'),
+         url('fonts/anke-regular-webfont.ttf') format('truetype'),
+         url('fonts/anke-regular-webfont.svg#ankeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'panefresco';
+    src: url('fonts/panefresco999wtregular-webfont.eot');
+    src: url('fonts/panefresco999wtregular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/panefresco999wtregular-webfont.woff2') format('woff2'),
+         url('fonts/panefresco999wtregular-webfont.woff') format('woff'),
+         url('fonts/panefresco999wtregular-webfont.ttf') format('truetype'),
+         url('fonts/panefresco999wtregular-webfont.svg#panefresco_999wtregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html,body {
   width: 100%;
   height: 100%;
-  background: #000000;
+  background: #f5f5f5;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'ankeregular', sans-serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 16px;
+  color: #333333;
 }
 
-a{
-  text-decoration: none;
-  color: #bada55;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'panefresco', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, strong, em {
+  color: #000000;
+}
+
+a {
+  color: #A2BD4A;
   outline: none;
-}
-
-a:hover{
-  color: #ffffff;
+  text-decoration: none;
 }
 
 #bg{
-  width: 100%;
-  height: 100%;
-  background: #000000;
+  background: #ffffff;
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 #player {
   position: absolute;
   top: 20px;
-  left: 20px;
+  right: 20px;
+  width: 45%;
+  min-width: 230px;
 }
 
 #playlist {
+  font-size: 12px;
+  font-family: sans-serif;
   width: 100%;
   height: 80px;
   background: #b3b3b3;
@@ -82,329 +130,319 @@ a:hover{
 }
 
 .audiojs .scrubber{
-  width: 132px;
+  width: auto;
+  position: absolute;
+  left: 38px;
+  right: 105px;
+}
+
+.audiojs .time {
+  position: absolute;
+  right: 0;
+  width: 87px;
 }
 
 .audiojs{
-  width: 300px;
+  width: 100%;
 }
 
-#links{
+#menu #spectrum{
   position: absolute;
-  top: 20px;
-  left: 320px;
-  right: 510px;
-  height: 116px;
-  background: url('../img/content_bg.png') top left repeat;
-}
-
-#links #spectrum{
-  position: absolute;
-  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 }
 
-#links #spectrum .bar{
+#menu #spectrum .bar{
   width: 0.58%;
   min-height: 3px;
   background: #333333;
   display: inline-block;
-  margin-bottom: -102px;
   margin-left: 0.29%;
   margin-right: 0.29%;
 }
 
-#links .col{
-  position: relative;
-  display: inline-block;
-  border-right: 1px #888888 solid;
-  margin-top: 6px;
-}
-
-#links .col.no-line{
-  border:none;
-}
-
-#links .col ul{
-  margin: 0;
-  padding: 0;
-}
-
-#links .col h2{
-  font-size: 14px;
-  font-weight: 700;
-  color: #cccccc;
-  margin: 0;
-  padding: 0 10px 4px 10px;
-  text-decoration: underline;
-}
-
-#links .col h2.no-underline{
-  text-decoration: none;
-}
-
-#links .col ul li{
-  padding: 3px 20px;
-  list-style: none;
-}
-
-#links .col ul li a{
-  color: #bada55;
-}
-
-#links .col ul li a:hover{
-  color: #ffffff;
-}
-
-#contentHolder{
-  position: absolute;
-  top: 20px;
-  bottom: 20px;
-  right: 20px;
-  width: 470px;
-  background: url('../img/contentHolder_bg.png') top left repeat;
-}
-
-#content{
+#menu {
   position: absolute;
   top: 10px;
   right: 10px;
-  bottom: 200px;
-  left: 10px;
-  background: url('../img/content_bg.png') top left repeat;
+  background: #555555;
+  border: 1px #BADA55 solid;
+  padding-top: 48px;
+  min-width: 54px;
+  border-radius: 5px;
 }
-
-#quickLinks{
+#menu h4 {
+  font-size: 28px;
+  color: #BADA55;
+  margin: 20px 0 5px 0;
+  padding: 0;
+}
+#menu ul {
+  list-style: none;
+  padding: 0 10px;
+  margin: 0;
+}
+#menu ul li {
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px #cccccc solid;
+}
+#menu ul li:hover {
+  border-bottom: 1px #BADA55 solid;
+}
+#menu ul li:last-child {
+  border-bottom: none;
+}
+#menu ul a {
+  display: block;
+  color: #ffffff;
+  font-size: 22px;
+  width: 100%;
+  padding: 10px 5px;
+}
+#menu ul a:hover {
+  color:#BADA55;
+}
+#menu ul a.icon {
+  padding-left: 34px;
+  background-size: 28px 28px !important;
+}
+#menu ul a.github.icon {
+  background: url('../img/icon-github.png') 0px 10px no-repeat;
+}
+#menu ul a.stackoverflow.icon {
+  background: url('../img/icon-stackoverflow.png') 0px 10px no-repeat;
+}
+#menu ul a.twitter.icon {
+  background: url('../img/icon-twitter.png') 0px 10px no-repeat;
+}
+#menu>ul {
+  display: none;
+}
+#menu .hamburger {
+  display: block;
   position: absolute;
   top: 0;
-  right: 0;
-  height: 50px;
-  left: 0;
-  background: #555555;
-}
-
-#quickLinks ul{
-  margin: 0;
-  padding: 0;
-}
-
-#quickLinks ul li{
-  display: block;
-  float: left;
-  position: relative;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 223px;
+  right: 3px;
+  width: 48px;
   height: 48px;
-  border-top: 1px #cccccc solid;
-  border-right: 1px #888888 solid;
-  border-bottom: 1px #000000 solid;
-  border-left: 1px #000000 solid;
+  background: url('../img/icon-hamburger-button.png') top left no-repeat;
+  background-size: 48px 48px;
+  content: " ";
 }
-#quickLinks ul li:hover{
-  background: #888888;
-}
-#quickLinks ul li a{
-  color: #cccccc;
-  display: block;
+#menu .close {
+  display: none;
   position: absolute;
-  width: 221px;
-  height: 28px;
-  padding: 10px 0;
-  left: 50%;
-  margin-left: -111px;
-  text-align: center;
-  font-size: 28px;
-  font-weight: 700;
-}
-#quickLinks ul li a span{
-  display: block;
-  line-height: 26px;
-}
-#quickLinks ul li a:hover{
-  color: #ffffff;
-  text-shadow: 1px 0 0 #555, 0 2px 0  #000, 1px 4px 6px #555;
+  top: 11px;
+  right: 14px;
+  width: 48px;
+  height: 48px;
+  background: url('../img/icon-close.png') top left no-repeat;
+  background-size: 48px 48px;
+  content: " ";
 }
 
-#contentContact{
-  position: absolute;
-  top: 50px;
-  right: 0;
+#menu:target{
+  top: 0;
   left: 0;
-  height: 0;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+}
+#menu:target>ul {
+  display: block;
+}
+#menu:target .hamburger {
+  display: none;
+}
+#menu:target .close {
+  display: block;
+}
+
+#content {
+  height: 100%;
+  overflow: auto;
+}
+
+#home .mobile{
   background: #555555;
-  color: #ffffff;
+  padding: 50px;
+  text-align: center;
 }
 
-#contentContact ul{
-  list-style: none;
-  padding: 0 0 0 50px;
-  margin: 0;
-}
-
-#contentContact ul li{
+#contact .content ul {
   padding: 0;
   margin: 0;
-  font-size: 28px;
-  padding: 10px 10px 0 38px;
+  list-style: none;
 }
 
-#contentContact ul li.contact-email{
-  background: url('../img/mailru.png') 0 15px no-repeat;
-}
-#contentContact ul li.contact-skype{
-  background: url('../img/skype.png') 0 15px no-repeat;
+#contact .content ul #contact-email {
+  background: url('../img/icon-email.png') top left no-repeat;
+  background-size: 32px 32px;
+  padding-left: 36px;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 12px;
 }
 
-#contactClose{
-  text-align: center;
-  padding: 5px;
+#contact .content ul #contact-skype {
+  background: url('../img/icon-skype.png') top left no-repeat;
+  background-size: 32px 32px;
+  padding-left: 36px;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 12px;
+}
+
+.stackable {
+  width: 100%;
+}
+
+.stackable::after {
   display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #000000;
-  color: #ffffff;
+  padding: 0;
+  margin: 0 auto;
+  width: 90%;
+  height: 5px;
+  border-radius: 5px 0 5px 0; 
+  content: " ";
+  background: #555555;
 }
 
-#contentText{
-  position: absolute;
-  top: 50px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow-y: auto;
-  color:#e5e5e5;
-  font-size: 16px;
+.stackable:first-child::after, .stackable:last-child::after {
+  display: none;
 }
 
-#contentText h1, #contentText p, #contentText h3{
-  padding-left: 10px;
-  padding-right: 10px;
+.stackable .content {
+  padding: 10px 25px 25px 25px;
 }
 
-#contentText h1{
-  font-size: 22px;
-  font-weight: 700;
-  margin: 10px 0;
+.stackable .content h1, .stackable .content h2 {
+  text-align: center;
 }
 
-#contentText h1 .badass, .badass{
+.badass{
   color: #bada55;
 }
 
-#contentText h1 .smurf{
+.smurf{
   color: #0086cf;
 }
 
-#contentText h1 .banana{
+.banana{
   color: #ffcb00;
 }
 
-#contentText p{
-  margin: 16px 0;
-}
-
-#contentText ul{
-  list-style-type: disc;
-  padding-left: 40px;
-  margin: 16px 0;
-}
-
-#contentText h3{
-  font-size: 18px;
-  text-decoration: underline;
-  margin: 24px 0 0 0;
-}
-
-#icons{
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  width: 68px;
-}
-
-.icon{
-  display: block;
-  overflow: hidden;
-  width: 68px;
-  height: 68px;
-  margin-bottom: 14px;
-  background: url('../img/icons_sprite.png') top left no-repeat;
-}
-
-.icon:hover{
-  background-position: 0 -68px;
-}
-
-.icon.wp{
-  background-position: -68px 0;
-}
-
-.icon.wp:hover{
-  background-position: -68px -68px;
-}
-
-.icon span{
-  display: block;
-  margin-left: -1000px;
-}
-
-#linkedIn{
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-}
-
-#loading{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -30px;
-  margin-left: -150px;
-  width: 150px;
+.align.center {
   text-align: center;
-  font-size: 26px;
-  line-height: 26px;
-  padding: 17px;
-  font-weight: 700;
-  color: #cccccc;
-  background: #333333;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;;
 }
 
-@media screen and (max-width: 1245px) {
-  #playlist {
-    height: 54px;
+.large-only {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .small-only {
+    display: none;
   }
 
-  .audiojs .scrubber{
-    width: 242px;
+  .large-only {
+    display: block;
   }
 
-  .audiojs{
-    width: 410px;
+  #player {
+    display: block;
   }
 
-  #links{
-    position: absolute;
-    top: 110px;
-    left: 20px;
-    right: auto;
-    width: 410px;
-    height: 116px;
-    background: url('../img/content_bg.png') top left repeat;
-    border-top: 1px #ffffff solid;
+  #menu #spectrum{
+    display: block;
   }
-  
-  #links .col.sm-no-line{
+
+  #menu{
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 100%;
     border: none;
+    border-radius: 0;
+    padding-top: 0;
+  }
+  #menu>ul {
+    display: block;
+  }
+
+  #menu .hamburger, #menu .close{
+    display: none;
+  }
+
+  #content {
+    width: 100%;
+    overflow:hidden;
+  }
+
+  #home {
+    overflow: hidden;
+  }
+
+  .stackable {
+    background: rgba(255,255,255,0.75);
+    position: absolute;
+    top: 0;
+    height: 0%;
+    padding-left: 230px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: auto;
+    -webkit-animation: hidemove 1s ease-out; /* Chrome, Safari, Opera */
+    animation: hidemove 1s ease-out;
+    -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards;
+  }
+
+  /* Chrome, Safari, Opera */
+  @-webkit-keyframes hidemove {
+    from {left: 0%; right: 0%; height:100%;}
+    to {left: 100%; right: -100%; height:100%;}
+  }
+
+  @keyframes hidemove {
+    from {left: 0%; right: 0%; height:100%;}
+    to {left: 100%; right: -100%; height:100%;}
+  }
+
+  .stackable:target {
+    height: 100%;
+    left: 0%;
+    right: 0%;
+    -webkit-animation: targetmove 1s ease-out; /* Chrome, Safari, Opera */
+    animation: targetmove 1s ease-out;
+  }
+
+  #home {
+    height: 100%;
+    left: 0%;
+    right: 0%;
+    -webkit-animation: none;
+  }
+
+  /* Chrome, Safari, Opera */
+  @-webkit-keyframes targetmove {
+    from {left: -100%; right: 100%;}
+    to {left: 0%; right: 0%;}
+  }
+
+  @keyframes targetmove {
+    from {left: -100%; right: 100%;}
+    to {left: 0%; right: 0%;}
+  }
+
+  .stackable .content h1, .stackable .content h2 {
+    text-align: left;
+  }
+
+  .stackable::after {
+    display: none;
   }
 }

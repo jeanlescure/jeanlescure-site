@@ -67,16 +67,8 @@
     I'd normally minimize all the following scripts into a single one.
     I shall leave them as they are for academic purposes. #BestExcuseEver
   -->
-  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,700' rel='stylesheet' type='text/css'>
   <script src="js/jquery.min.js"></script>
-  <script src="js/bowser.min.js"></script>
-  <script src="js/three.min.js"></script>
-  <script src="js/scene.js"></script>
-  <script src="js/DDSLoader.js"></script>
-  <script src="js/MTLLoader.js"></script>
-  <script src="js/OBJMTLLoader.js"></script>
-  <script src="js/logo.js"></script>
-  <script src="js/graffiti.js"></script>
+  <script src="js/head.min.js"></script>
   <script type="application/x-glsl" id="sky-vertex">
   varying vec2 vUV;
 
@@ -96,81 +88,63 @@
     gl_FragColor = vec4(sample.xyz, sample.w);
   }
   </script>
-  <script src="js/skydome.js"></script>
-  <script src="js/tweenjs-0.6.0.min.js"></script>
-  <script src="js/geo_cages.js"></script>
-  <script src="js/OrbitControls.js"></script>
-  <script src="http://connect.soundcloud.com/sdk.js"></script>
-  <script src="js/audio.min.js"></script>
-  <script src="js/sc.audio.js"></script>
-  <script src="js/main.js"></script>
+  <script>
+  head.ready(document, function() {
+    head.test(
+      (head.screen.innerWidth >= 768),
+      [
+        "js/bowser.min.js",
+        "js/three.min.js",
+        "js/scene.js",
+        "js/DDSLoader.js",
+        "js/MTLLoader.js",
+        "js/OBJMTLLoader.js",
+        "js/logo.js",
+        "js/skydome.js",
+        "js/tweenjs-0.6.0.min.js",
+        "js/geo_cages.js",
+        "js/OrbitControls.js",
+        "http://connect.soundcloud.com/sdk.js",
+        "js/audio.min.js",
+        "js/sc.audio.js",
+        "js/main.js"
+      ],
+      [],
+      function() {
+        initDesktop();
+      }
+    );
+  });
+  </script>
   <script type="text/javascript" src="http://platform.linkedin.com/in.js">
     api_key: 78ss7jbc7z9s4s
   </script>
 </head>
 <!--
-  Phew! This head was bigger than Charlie Brown's!
+  Phew! This head was larger than Charlie Brown's!
 -->
 
 <body>
-  <div id="bg"></div>
-  
-  <div id="player">
-    <audio preload></audio>
-    
-    <div id="playlist">
-      <ul><!-- Playlist items loaded dynamically. --></ul>
-    </div>
-  </div>
-  
-  <div id="links">
-    <div id="spectrum"><!-- Bars generated dynamically. --></div>
-    
-    <div class="col no-line">
-      <h2>Website Goodies:</h2>
-      <ul>
-        <li><a href="http://threejs.org/">Three.js</a></li>
-        <li><a class="sc-link" href="https://developers.soundcloud.com/docs/api/">SoundCloud API</a></li>
-        <li><a href="http://developer.linkedin.com/">LinkedIn API</a></li>
-      </ul>
-    </div>
-    
-    <div class="col">
-      <h2 class="no-underline">&nbsp;</h2>
-      <ul>
-        <li><a href="https://jquery.org">jQuery</a></li>
-        <li><a href="http://kolber.github.io/audiojs/">Audio.js</a></li>
-        <li>&nbsp;</li>
-      </ul>
-    </div>
-    
-    <div class="col sm-no-line">
-      <h2>Conferences I've Spoken At:</h2>
-      <ul>
-        <li><a href="http://webcongress.com/panama/">WebCongress Panama</a></li>
-        <li><a href="http://www.meetup.com/Costa-Rica-Ruby-Group/">Costa Rica Ruby Group Meetup</a></li>
-        <li><a href="https://www.facebook.com/events/172476049588298/permalink/174678709368032/">DigitalZoomit</a></li>
-      </ul>
-    </div>
-  </div>
-  
-  <div id="contentHolder">
-    <div id="content">
-      <div id="quickLinks">
-        <ul>
-          <li><a href="/resume.jeanlescure.pdf" target="_blank"><span>Resum&eacute;</span></a></li>
-          <li><a href="#" class="contact-link"><span>Contact Me</span></a></li>
-        </ul>
+  <section id="content">
+    <div id="home" class="stackable">
+      <div class="mobile small-only">
+        <img src="img/logo.png" alt="">
       </div>
-      
-      <div id="contentContact">
-        <!-- contact info is generated to avoid spam bots -->
-        <a id="contactClose" href="#">&#9653;close&#9653;</a>
+      <div class="large-only">
+        <div id="bg"></div>
+  
+        <div id="player">
+          <audio preload></audio>
+          
+          <div id="playlist">
+            <ul><!-- Playlist items loaded dynamically. --></ul>
+          </div>
+        </div>
       </div>
-      
-      <div id="contentText">
-        <h1><span class="badass">Hackery</span>, <span class="smurf">Conference Speaking</span> and <span class="banana">BigData</span></h1>
-        
+    </div>
+    <div id="about" class="stackable">
+      <div class="content">
+        <h1>About Hackery, Conference Speaking and BigData</h1>
         <p>Hi, I'm Jean. I started programming back when 56kbps was all the rage. I'm extremely enthusiastic about turning data into bits, and bits into dynamically eye-melting graphics.</p>
         <p>I'm passionate about:</p>
         
@@ -184,10 +158,19 @@
           <li>HBase</li>
         </ul>
         
-        <p>"How passionate?" You ask. I continually and profusely profess my professional fondness of these technologies through the age-old art of <b>Conference Speaking</b>. So, be sure to drop me a line if you're looking for someone to spruce-up your conference or meetup with blatantly geeky data-jargon.</p>
+        <p>"How passionate?" You ask. I continually and profusely profess my professional fondness of these technologies through the age-old art of <strong>Conference Speaking</strong>. So, be sure to drop me a line if you're looking for someone to spruce-up your conference or meetup with blatantly geeky data-jargon.</p>
+
+        <p>In recap, I program and I do it phenomenally well, I talk publicly about it too, and I have a website.</p>
         
+        <p>Have yourself a wonderful day!</p>
+      </div>
+    </div>
+    <div id="work" class="stackable">
+      <div class="content">
+        <h2>Work</h2>
+
         <h3>Some articles I've written recently</h3>
-        
+          
         <ul class="badass">
           <li><a href="http://www.agilityfeat.com/blog/2015/08/using-webgl-in-ios-without-phonegap-or-ionic" target="_blank">Using WebGL in iOS without PhoneGap or Ionic</a></li>
           <li><a href="https://webrtc.ventures/2015/08/adding-effects-to-webrtc/" target="_blank">Applying Effects to WebRTC Video in Real Time</a></li>
@@ -202,35 +185,68 @@
           <li><a href="https://github.com/jeanlescure/hipster_sql_to_hbase" target="_blank">Hipster SQL to HBase (Ruby Gem)</a></li>
           <li><a href="http://about.bankofamerica.com/en-us/index.html" target="_blank">About Bank of America (Award Winning Website)</a></li>
         </ul>
-        
-        <p>In recap, I program and I do it phenomenally well, I talk publicly about it too, and I have a website.</p>
-        
-        <p>Have yourself a wonderful day!</p>
       </div>
     </div>
-    
-    <div id="linkedIn">
-      <iframe id="li_gen_1418926440058_0" name="li_gen_1418926440058_0" src="/linked_in/index.html" style="visibility: visible; width: 364px; height: 171px; background: transparent;" true="" framspacing="0" frameborder="0"></iframe>
-    </div>
-    
-    <div id="icons">
-      <a href="https://www.github.com/jeanlescure" target="_blank" class="icon"><span>Jean Lescure on GitHub</span></a>
-      <a href="/blog" target="_blank" class="icon wp"><span>Jean Lescure's Blog</span></a>
-    </div>
-  </div>
-  
-  <div id="loading">Loading...</div>
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <div id="contact" class="stackable">
+      <div class="content">
+        <h2>Contact</h2>
 
-    ga('create', 'UA-57659394-1', 'auto');
-    ga('send', 'pageview');
+        <p>
+          What? No contact form?
+        </p>
 
-  </script>
+        <p>
+          I've actually taken the time to write <a href="http://jeanlescure.io/blog/why-my-website-has-no-contact-form/" target="_blank">a post in which I explain the why</a>.
+        </p>
+
+        <ul>
+          <!-- contact info is generated to avoid spam bots -->
+        </ul>
+    
+        <div id="linkedIn">
+          <iframe id="li_gen_1418926440058_0" name="li_gen_1418926440058_0" src="linked_in/index.html" style="visibility: visible; width: 364px; height: 171px; background: transparent;" true="" framspacing="0" frameborder="0"></iframe>
+        </div>
+
+        <p><strong>Pro Tip:</strong> Best way to reach me is by e-mail.</p>
+      </div>
+    </div>
+  </section>
+  <nav id="menu">
+    <div id="spectrum"><!-- Bars generated dynamically. --></div>
+    <a href="#menu" class="hamburger"></a>
+    <a href="#" class="close"></a>
+    <ul>
+      <li>
+        <a href="#">Home</a>
+      </li>
+      <li>
+        <a href="#about">About</a>
+      </li>
+      <li>
+        <a href="#work">Work</a>
+      </li>
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+      <li>
+        <a href="/blog">Blog</a>
+      </li>
+      <li>
+        <h4>Other Links</h4>
+        <ul>
+          <li>
+            <a class="github icon" href="">Github</a>
+          </li>
+          <li>
+            <a class="stackoverflow icon" href="">StackOverflow</a>
+          </li>
+          <li>
+            <a class="twitter icon" href="">Twitter</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
   
   <!-- See You Space Cowboy... -->
 </body>
