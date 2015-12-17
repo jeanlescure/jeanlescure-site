@@ -23,10 +23,19 @@ function initDesktop(){
   setTimeout(function(){
     $('.stackable').not(':target,#home').css('opacity', 1);
   }, 1000);
-  if (bowser.firefox){ 
-    $('.sc-link').attr('href','http://www.createjs.com/#!/TweenJS');
-    $('.sc-link').html('TweenJS');
-  }
+
+  var hash = location.hash;
+
+  if (hash.length > 2) $('#player').fadeOut();
+
+  $('#menu a').click(function(ev){
+    console.log($(ev.target).attr('href'));
+    if ($(ev.target).attr('href') === '#') {
+      $('#player').fadeIn();
+    }else{
+      $('#player').fadeOut();
+    }
+  });
   
   $(document).on('loadable_loaded',function(ev){
     loadables_loaded++;
