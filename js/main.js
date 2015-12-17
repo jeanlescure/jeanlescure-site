@@ -51,6 +51,8 @@ function initDesktop(){
       $('#loading').remove();
       animate();
       position_logo();
+  
+      rotate_logo();
     }
   });
   
@@ -108,8 +110,6 @@ function initDesktop(){
       $('#spectrum .bar').eq(i/8).height(100*(frequencyData[i]/256));
     };
   }
-  
-  rotate_logo();
 
   // generate contact info to avoid spam bots
   $('#contact .content ul').append('<li id="contact-email">');
