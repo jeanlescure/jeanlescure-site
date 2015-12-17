@@ -76,6 +76,10 @@ a {
   text-decoration: none;
 }
 
+p {
+  line-height: 1.5;
+}
+
 #bg{
   background: #ffffff;
   position: absolute;
