@@ -115,7 +115,7 @@ function initDesktop(){
   $('#contact .content ul').append('<li id="contact-email">');
   $('#contact .content ul').append('<li id="contact-skype">');
   $('#contact .content ul #contact-email').html('jean'+'@'+'ticowebmedia.com');
-  $('#contact .content ul #contact-skype').html('jean'+'.'+'ticowebmedia');
+  $('#contact .content ul #contact-skype').html('jean'+'.'+'m'+'.'+'lescure');
 };
 
 function rotate_logo(){
